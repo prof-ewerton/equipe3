@@ -3,12 +3,12 @@ class Ui:
     def __init__(self):
 
         self.MENU_OPTIONS = [
-            (1, "Entity one", self.menu_entity_one),
+            (1, "Abrigo", self.abrigo),
         ]
 
     def show(self):
         while True:
-            print("\n===== TEMA DA EQUIPE =====")
+            print("\n===== Apocalipse zumbi =====")
 
             # Exibe as opções dinamicamente
             for number, description, action in self.MENU_OPTIONS:
@@ -33,6 +33,7 @@ class Ui:
             if not selected:
                 print("Opção inválida. Tente novamente.")
 
-    def menu_entity_one(self):
-        print("\n===== TEMA DA EQUIPE =====")
-        print("= Entidade do Estudante ==")
+    def abrigo(self):
+        print("\n===== Apocalipse =====")
+        print("= Abrigo ==")
+        
