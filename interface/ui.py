@@ -1,14 +1,15 @@
 from services.sobrevivente_service import SobreviventeService 
 from services.abrigo_service import abrigoService
+
 class Ui:
 
-    def __init__(self, sobrevivente_service: SobreviventeService):
-
+    #def __init__(self, sobrevivente_service: SobreviventeService):
+    def __init__(self):
         self.MENU_OPTIONS = [
             (1, "Sobreviventes", self.menu_entity_one),
             (2, "Abrigo", self.menu_entity_two)
         ]
-        self.sobrevivente_service = sobrevivente_service
+        #self.sobrevivente_service = sobrevivente_service
 
     def show(self):
         while True:
@@ -77,6 +78,7 @@ class Ui:
                 capacidade = input("Digite a capacidade do seu abrigo: ")
                 seguro = input("Seu abrigo é seguro?(s/n): ")
                 localizacao = input("Qual a localizacao do seu abrigo?(garanhuns/londrina/miami): ")
-                self.abrigo_service.add_abrigo(nome, capacidade, seguro, localizacao)
+                s = abrigoService()
+                s.add_abrigo(nome, capacidade, seguro, localizacao)
             except ValueError as e:
                print(e)
