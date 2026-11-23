@@ -15,6 +15,7 @@ def install():
                 skill TEXT
             );
         """)
+        cursor.close()
         
         cursor.execute("""
             INSERT INTO produto (name, age, infected, skill)

@@ -1,11 +1,12 @@
 from services.sobrevivente_service import SobreviventeService 
-
+from services.abrigo_service import abrigoService
 class Ui:
 
     def __init__(self, sobrevivente_service: SobreviventeService):
 
         self.MENU_OPTIONS = [
             (1, "Sobreviventes", self.menu_entity_one),
+            (2, "Abrigo", self.menu_entity_two)
         ]
         self.sobrevivente_service = sobrevivente_service
 
@@ -56,5 +57,26 @@ class Ui:
                 infected = input("Seu sobrevivente está infectado?(s/n): ")
                 skill = input("Qual a habilidade do seu sobrevivente?(forte/rapido/inteligente): ")
                 self.sobrevivente_service.add_sobrevivente(name, age, infected, skill)
+            except ValueError as e:
+               print(e)
+    
+    def menu_entity_two(self):
+        print("\n===== Apocalipse Zumbi =====")
+        print("== Abrigo ==")
+        
+        print("(0) - Retornar ao menu principal")
+        print("(1) - Registrar abrigo")
+        
+        option = input("\nEscolha uma opção: ")
+        
+        if option == "0":
+            self.show()
+        elif option == "1":
+            try:
+                nome = input("Digite o nome do seu abrigo: ")
+                capacidade = input("Digite a capacidade do seu abrigo: ")
+                seguro = input("Seu abrigo é seguro?(s/n): ")
+                localizacao = input("Qual a localizacao do seu abrigo?(garanhuns/londrina/miami): ")
+                self.abrigo_service.add_abrigo(nome, capacidade, seguro, localizacao)
             except ValueError as e:
                print(e)
