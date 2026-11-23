@@ -1,5 +1,7 @@
+from pathlib import Path
 import sqlite3
 
+DATABASE_PATH = Path(__file__).resolve().parent / "database.db"
+
 def get_db_connection():
-    connection = sqlite3.connect('database.db')
-    return connection.row_factory = sqlite3.Row
+    return sqlite3.connection(DATABASE_PATH)
