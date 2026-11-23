@@ -34,14 +34,14 @@ def install():
                 seguro BOOLEAN,
                 localizacao TEXT
             );
-            
+        """)
+        cursor.execute("""
             INSERT INTO abrigo (nome, capacidade, seguro, localizacao)
             VALUES
                 ('Abrigo do Norte', 50, 0, 'miami'),
                 ('Abrigo do Sul', 100, 0, 'miami'),
                 ('Abrigo do Leste', 70, 0, 'londrina'),
                 ('Abrigo do Oeste', 30, 1, 'garanhuns'),
-                ('Abrigo do Noroeste', 80, 0, 'londrina');
-            
+                ('Abrigo do Noroeste', 80, 0, 'londrina');            
         """)
         conn.commit()
