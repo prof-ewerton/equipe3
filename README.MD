@@ -30,3 +30,4 @@ A funcionalidade deverá:
 
 ### Entidades
 Mateus - Sobrevivente - nome(String), idade(Integer), infectado(Boolean), habilidade(String)
+João Pedro - Abrigo - nome(string), capacidade (Integer), seguro - (boolean), localizacao (string)
