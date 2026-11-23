@@ -5,7 +5,7 @@ from contextlib import closing
 
 def install():
     with closing(get_db_connection()) as conn:
-        cursor = conn.cursor
+        cursor = conn.cursor()
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS produto (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -14,7 +14,9 @@ def install():
                 infected BOOLEAN,
                 skill TEXT
             );
-            
+        """)
+        
+        cursor.execute("""
             INSERT INTO produto (name, age, infected, skill)
             VALUES
                 ('Marcos', 23, 0, 'rapido'),
@@ -22,7 +24,6 @@ def install():
                 ('Murilo', 27, 0, 'inteligente'),
                 ('Mateus', 29, 1, 'forte'),
                 ('João', 34, 0, 'inteligente');
-            
-        """)
+            """)
         
         conn.commit()
