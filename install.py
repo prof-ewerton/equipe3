@@ -26,8 +26,6 @@ def install():
                 ('João', 34, 0, 'inteligente');
             """)
         
-        conn.commit()
-        
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS abrigo (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
