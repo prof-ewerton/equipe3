@@ -17,11 +17,11 @@ def install():
             
             INSERT INTO produto (name, age, infected, skill)
             VALUES
-                ('Marcos', 23, 0, 'rápido'),
+                ('Marcos', 23, 0, 'rapido'),
                 ('Julia', 53, 0, 'forte'),
                 ('Murilo', 27, 0, 'inteligente'),
-                ('Mateus', 29, 1, 'marcenaria'),
-                ('João', 34, 0, 'armas');
+                ('Mateus', 29, 1, 'forte'),
+                ('João', 34, 0, 'inteligente');
             
         """)
         
