@@ -15,7 +15,6 @@ def install():
                 skill TEXT
             );
         """)
-        cursor.close()
         
         cursor.execute("""
             INSERT INTO produto (name, age, infected, skill)
@@ -36,6 +35,9 @@ def install():
                 localizacao TEXT
             );
             
+        """)
+        
+        cursor.execute("""
             INSERT INTO abrigo (nome, capacidade, seguro, localizacao)
             VALUES
                 ('Abrigo do Norte', 50, 0, 'miami'),
@@ -43,6 +45,6 @@ def install():
                 ('Abrigo do Leste', 70, 0, 'londrina'),
                 ('Abrigo do Oeste', 30, 1, 'garanhuns'),
                 ('Abrigo do Noroeste', 80, 0, 'londrina');
-            
         """)
+        
         conn.commit()
