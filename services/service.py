@@ -7,5 +7,12 @@ class abrigoService:
         self.repository=repository
 
     def create(self, nome: str, capacidade: int, seguro: bool, localizacao: str) -> Abrigo:
-        new_abrigo = (nome, capacidade, seguro, localizacao)
+        localicao_possivel = ["garanhuns", "londrina", "miami"]
+        localicao_clean = localizacao.lower().strip()
+        
+        # Não tenho certeza se isso funciona
+        if localicao_clean is not in localicao_possivel:
+            raise ValueError("Essa localização não se encaixa entre as disponíveis")
+        
+        new_abrigo = (nome, capacidade, seguro, localizacao_clean)
         return self.repository.create(new_abrigo)
